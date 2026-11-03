@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Resume · Andrew Byrley</title>
+<meta name="description" content="Resume of Andrew Byrley.">
+<link rel="canonical" href="https://andrewbyrley.com/resume/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://andrewbyrley.com/resume/">
+<meta property="og:title" content="Andrew Byrley · Resume">
+<meta property="og:image" content="https://andrewbyrley.com/portrait.jpg">
+<link rel="icon" type="image/png" href="../favicon.png">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<style>
+  :root {
+    --paper: #F4EFE6;
+    --ink: #1B1A17;
+    --ink-soft: #55514A;
+    --ink-faint: #857F74;
+    --rule: #DDD4C3;
+    --accent: #8A3A2E;
+    --serif: Charter, "Bitstream Charter", "Iowan Old Style", "Sitka Text", Cambria, Georgia, serif;
+    --sans: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    color-scheme: light dark;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --paper: #1A1917;
+      --ink: #EDE8DE;
+      --ink-soft: #BDB6A9;
+      --ink-faint: #8F897E;
+      --rule: #34312C;
+      --accent: #E3A08F;
+    }
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font: 17px/1.55 var(--serif);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .page {
+    max-width: 44rem;
+    margin: 0 auto;
+    padding: 2rem 16px 3rem;
+  }
+
+  a { color: var(--accent); text-underline-offset: 0.18em; text-decoration-thickness: 1px; }
+
+  .topnav {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    font-family: var(--sans);
+    font-size: 0.88rem;
+    margin-bottom: 2.5rem;
+  }
+  .topnav a { color: var(--ink-soft); }
+  .topnav button {
+    font: inherit;
+    color: var(--ink-soft);
+    background: none;
+    border: 0;
+    text-decoration: underline;
+    text-underline-offset: 0.18em;
+    text-decoration-thickness: 1px;
+    cursor: pointer;
+  }
+
+  h1 {
+    font-size: 2.1rem;
+    font-weight: 600;
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+    margin-bottom: 0.5rem;
+  }
+  .contact {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.3rem 1.1rem;
+    font-family: var(--sans);
+    font-size: 0.9rem;
+    margin-bottom: 1.25rem;
+  }
+  .summary { color: var(--ink); }
+
+  h2 {
+    font-family: var(--sans);
+    font-size: 0.78rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--ink-faint);
+    margin: 2.75rem 0 0.75rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .org {
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+  }
+
+  .role { margin-top: 1.25rem; }
+  .role h3 {
+    font-size: 1.04rem;
+    font-weight: 600;
+    line-height: 1.35;
+  }
+  .role .meta {
+    font-family: var(--sans);
+    font-size: 0.84rem;
+    color: var(--ink-faint);
+    margin-top: 0.1rem;
+  }
+
+  ul.bullets {
+    margin: 0.45rem 0 0 1.15rem;
+  }
+  ul.bullets li {
+    margin-top: 0.3rem;
+    padding-left: 0.15rem;
+  }
+  ul.bullets li::marker { color: var(--ink-faint); }
+
+  .plain { list-style: none; }
+  .plain li { margin-top: 0.4rem; }
+  .plain b { font-weight: 600; }
+
+  footer {
+    margin-top: 3rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--rule);
+    font-family: var(--sans);
+    font-size: 0.8rem;
+    color: var(--ink-faint);
+  }
+
+  @media (max-width: 480px) {
+    body { font-size: 16px; }
+    h1 { font-size: 1.75rem; }
+  }
+
+  @media print {
+    @page { margin: 0.6in; }
+    :root { --paper: #fff; --ink: #000; --ink-soft: #222; --ink-faint: #555; --rule: #bbb; --accent: #000; }
+    body { font-size: 10.5pt; line-height: 1.4; }
+    .page { max-width: none; padding: 0; }
+    .topnav, footer { display: none; }
+    a { text-decoration: none; }
+    h1 { font-size: 20pt; }
+    h2 { margin-top: 16pt; break-after: avoid; }
+    .role { margin-top: 9pt; break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+<main class="page">
+
+  <nav class="topnav">
+    <a href="/">&larr; andrewbyrley.com</a>
+    <button type="button" onclick="window.print()">Print or save as PDF</button>
+  </nav>
+
+  <h1>Andrew Byrley</h1>
+  <ul class="contact">
+    <li><a id="email" href="#" data-u="andrew.byrley" data-d="gmail.com">andrew.byrley [at] gmail.com</a></li>
+    <li><a href="https://www.linkedin.com/in/andrewbyrley/" target="_blank" rel="noopener">LinkedIn</a></li>
+    <li><a href="https://github.com/byrleyar" target="_blank" rel="noopener">GitHub</a></li>
+  </ul>
+  <p class="summary">
+    U.S. diplomat since 2010, with economic, consular, public affairs, and security
+    engineering assignments in Europe, Africa, Central America, and Washington.
+    Trained as a mechanical and robotics engineer; most recently worked on
+    technology and AI policy in Brussels and London.
+  </p>
+
+  <!-- To add a role, copy one <div class="role"> block. -->
+  <h2>Foreign Service Experience</h2>
+  <p class="org">U.S. Department of State &middot; 2010&ndash;present</p>
+
+  <div class="role">
+    <h3>Management Analyst</h3>
+    <p class="meta">Washington &middot; 2025</p>
+    <ul class="bullets">
+      <li>Saved the Department more than $150,000 a year in operations and maintenance costs by writing the decision memo that ended a program built on faulty performance standards and ever-growing staffing requests. Then ran the technical shutdown and the notice to the field.</li>
+      <li>Used AI tools to turn 500 pages of the Foreign Affairs Handbook into concise guidance so bureaus apply Department standards the same way, and gave editorial guidance to bureaus across time zones.</li>
+      <li>Wrote a <a href="https://github.com/byrleyar/light-analysis" target="_blank" rel="noopener">Python tool</a> that uses satellite night-light data to estimate regional GDP for a review of overseas posts, giving leadership an objective measure where official data didn't exist.</li>
+      <li>Analyzed a decades-old travel practice against the Fly America Act and flagged the legal and financial risk it posed to the government.</li>
+      <li>Proposed centralizing the management of Department Notices under a single communications office to end fragmented Department-wide messaging.</li>
+    </ul>
+  </div>
+
+  <div class="role">
+    <h3>Economic and Digital Policy Officer</h3>
+    <p class="meta">U.S. Embassy Riga, Latvia &middot; 2022&ndash;2025</p>
+    <ul class="bullets">
+      <li>Built the embassy's strategy to treat economic security as national security, covering banking access, energy diversification, investment climate, and Chinese commercial influence. Latvia's President and Prime Minister adopted the framing in public remarks. (Meritorious Honor Award)</li>
+      <li>Persuaded the Latvian government to bar a Chinese company from Riga airport, then worked with the Commerce Department so a U.S. competitor won the contract.</li>
+      <li>Found a double-taxation problem affecting U.S. investors and wrote the talking points that led Latvia to change its tax code.</li>
+      <li>Set up the embassy's interagency cyber working group with Treasury, DOJ, Secret Service, and FBI, giving the Ambassador specific gaps to raise with the Latvian government.</li>
+      <li>Managed the bilateral fallout when the January 2025 AI diffusion rule placed Latvia in Tier 2, and made Latvia's case in Washington.</li>
+      <li>Served repeatedly as acting chief of the 11-person political-economic section. Rebuilt a congressional delegation's itinerary in three hours after last-minute changes; the Secretary of State and Members of Congress praised the visit.</li>
+    </ul>
+  </div>
+
+  <div class="role">
+    <h3>Staff Assistant and Acting Special Assistant</h3>
+    <p class="meta">Bureau of European and Eurasian Affairs, Washington &middot; 2020&ndash;2021</p>
+    <ul class="bullets">
+      <li>Managed the flow of policy papers to the Assistant Secretary and six Deputy Assistant Secretaries through the presidential transition, and briefed the Acting Assistant Secretary during leadership absences.</li>
+      <li>Coordinated demarche cables to allied capitals within 48 hours so partners heard sensitive points privately before the Secretary spoke publicly.</li>
+      <li>Moved the bureau's 90-person weekly staff meeting online during COVID-19 and wrote the procedures that made the change permanent. (Meritorious Honor Award)</li>
+    </ul>
+  </div>
+
+  <div class="role">
+    <h3>Desk Officer</h3>
+    <p class="meta">Office of West African Affairs, Washington &middot; 2019&ndash;2020</p>
+    <ul class="bullets">
+      <li>Corrected outdated human rights information another bureau was using to block a U.S. equipment export to The Gambia; the bureau withdrew its denial.</li>
+      <li>Persuaded the Gambian Ambassador to issue travel documents for removal cases DHS had not resolved in up to four years, and became DHS's go-to contact for hard cases.</li>
+      <li>Wrote an analysis of West African offshore gas and the U.S. investment at stake that the office director used with the Senate Foreign Relations Committee.</li>
+    </ul>
+  </div>
+
+  <div class="role">
+    <h3>Economic Officer</h3>
+    <p class="meta">U.S. Embassy Nouakchott, Mauritania &middot; 2016&ndash;2019</p>
+    <ul class="bullets">
+      <li>Served repeatedly as Acting Deputy Chief of Mission, running day-to-day embassy operations across all sections.</li>
+      <li>Persuaded the Department of Labor to change its position and preserve Mauritania's AGOA trade eligibility, keeping U.S. leverage on human rights conditions.</li>
+      <li>Co-led the embassy's observation of the 2019 presidential election, deploying 25 staff, during Mauritania's first peaceful transfer of power.</li>
+      <li>Wrote Mauritania's first Country Commercial Guide and helped launch the U.S.-Mauritania Business Forum. (Meritorious Honor Award)</li>
+      <li>Ran the economic section while serving as Acting Consular Chief, an above-grade position, and ran the embassy's small grants program.</li>
+    </ul>
+  </div>
+
+  <div class="role">
+    <h3>Consular Officer and Acting Public Affairs Officer</h3>
+    <p class="meta">U.S. Embassy Belmopan, Belize &middot; 2014&ndash;2016</p>
+    <ul class="bullets">
+      <li>Served six months as Acting Public Affairs Officer, two grades above my own, while keeping full consular duties; ran press for the USS Comfort medical mission. (Meritorious Honor Award)</li>
+      <li>Cut passport wait times by 75% by reordering intake steps, and ended birth-certificate case holds with a pre-appointment document check.</li>
+      <li>Pushed for a Department-wide change during a global consular systems outage that let posts issue transit letters to stranded green-card holders.</li>
+    </ul>
+  </div>
+
+  <div class="role">
+    <h3>Security Engineering Officer</h3>
+    <p class="meta">Bureau of Diplomatic Security, Washington and Dakar, Senegal &middot; 2010&ndash;2014</p>
+    <ul class="bullets">
+      <li>Served as Deputy Officer-in-Charge of the Dakar regional engineering center supporting eight West African embassies; supervised engineers, technicians, Navy Seabees, and local staff, and managed contractors.</li>
+      <li>Managed a $45 million technical countermeasures equipment inventory with the lowest losses in over ten years, and retired $2.7 million in outdated equipment.</li>
+      <li>Took over technical security for the Secretary of State's visit to Dakar on short notice; Washington recognized the work in a memo to the Ambassador.</li>
+    </ul>
+  </div>
+
+  <h2>Technology Policy</h2>
+
+  <div class="role">
+    <h3>Senior EU Engagement Officer</h3>
+    <p class="meta">French Center for AI Safety (CeSIA), Brussels &middot; 2026</p>
+    <ul class="bullets">
+      <li>Built CeSIA's map of the Brussels AI policy landscape and a sequenced plan for engaging the EU AI Office and the European Parliament.</li>
+      <li>Represented CeSIA with EU AI Office staff and in the civil-society coalition preparing for the 2027 AI summit in Geneva.</li>
+    </ul>
+  </div>
+
+  <div class="role">
+    <h3>Winter Fellow</h3>
+    <p class="meta">Centre for the Governance of AI (GovAI), London &middot; January&ndash;April 2026</p>
+    <ul class="bullets">
+      <li>Built an <a href="https://github.com/byrleyar/eu-ai-act-mcp" target="_blank" rel="noopener">open-source tool</a> that drafts EU AI Act technical documentation from public model data; it reached 96% field accuracy across three open-weight models.</li>
+      <li>Wrote a policy memo on machine-readable compliance submissions and briefed it to EU AI Office staff, who supported the approach.</li>
+    </ul>
+  </div>
+
+  <h2>Publications</h2>
+  <ul class="plain">
+    <li>Bucknall, B., Byrley, A., and Hammond, L. (2026). &ldquo;<a href="https://arxiv.org/abs/2610.26624" target="_blank" rel="noopener">From TCP/IP to MCP: Security and Governance Lessons from Internet Protocols for Agentic AI</a>.&rdquo; arXiv:2610.26624.</li>
+  </ul>
+
+  <h2>Projects</h2>
+  <ul class="plain">
+    <li><b><a href="/fehb/">FEHB Survey 2026</a>:</b> anonymous survey of 80 Foreign Service households on their FEHB health plans, published before 2027 Open Season.</li>
+    <li><b>ReminderLoop:</b> natural-language reminder app, built and shipped to the App Store and Google Play as a solo developer.</li>
+    <li><b><a href="https://hackaday.io/project/178435-mr-miffy-rgb-led-module" target="_blank" rel="noopener">Smart lamp</a>:</b> battery-powered Zigbee LED module for a children's lamp, including a custom zigbee2mqtt device handler.</li>
+  </ul>
+
+  <h2>Education</h2>
+  <ul class="plain">
+    <li>M.S., Automation and Mechatronics, Georgia Institute of Technology</li>
+    <li>B.S., Mechanical Engineering, Rose-Hulman Institute of Technology</li>
+  </ul>
+
+  <h2>Additional</h2>
+  <ul class="plain">
+    <li><b>Languages:</b> French (DELF B2), Latvian</li>
+    <li><b>Awards:</b> Meritorious Honor Award (2024, 2021, 2019, 2016 twice); Meritorious Service Increase (2018); Franklin Award</li>
+    <li><b>Training:</b> AI Security Bootcamp (2026); AI Lab for Government Officials, Wilson Center; Trilateral Technology Leaders Training Program, Johns Hopkins SAIS</li>
+    <li><b>Service:</b> EEO Counselor, 7+ years</li>
+  </ul>
+
+  <footer>
+    <p>Views expressed here are my own and do not represent the U.S. Government.</p>
+  </footer>
+
+</main>
+<script>
+  var e = document.getElementById('email');
+  e.href = 'mailto:' + e.dataset.u + '@' + e.dataset.d;
+  e.textContent = e.dataset.u + '@' + e.dataset.d;
+</script>
+</body>
+</html>

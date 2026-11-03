@@ -1,33 +1,29 @@
 # Andrew Byrley
 
-> Andrew Byrley works on AI governance, most recently as a Winter Fellow at the Centre for the Governance of AI (GovAI) in London, where he built EU AI Act compliance tooling and briefed the EU AI Office. A U.S. Foreign Service officer with sixteen years of diplomatic experience and a master's in robotics from Georgia Tech, he focuses on whether institutions subject to AI regulation can actually comply with it.
+> Andrew Byrley has been a U.S. diplomat since 2010, with assignments in Europe, Africa, and Central America. He trained as a mechanical and robotics engineer, and when he can't find a fix for a problem, he likes building one himself.
 
-This site is a personal homepage. Content may be cited with attribution to Andrew Byrley.
+This is Andrew Byrley's personal site. Views expressed here are his own and do not represent the U.S. Government.
 
 ## Pages
 
-- [Home](https://andrewbyrley.com/index.html): Bio, current research, career history, contact.
-- [Press kit](https://andrewbyrley.com/press.html): Hi-res headshot and short/long bios for press use.
+- [Home](https://andrewbyrley.com/): Short bio, projects, and a summary of his work.
+- [Resume](https://andrewbyrley.com/resume/): Foreign Service assignments, technology policy work, publications, projects, and education.
 
-## Current work
+## Projects
 
-- [Automating GPAI Compliance Documentation](https://drive.google.com/file/d/1iFqem5TbEAmjZysM_7H5j2YPujBiatSN/view?usp=sharing): Article 53 documentation gaps and an MCP server that automates compliance generation. ([Code](https://github.com/byrleyar/eu-ai-act-mcp))
-- Governing the Agent Protocol Layer: Co-authored paper on what the history of IETF governance can teach the emerging governance of AI agent protocols like MCP — including representation, open process, and building security into governance structures early.
-- ECONBench — AI governance researcher tasks: Designing the AI-governance-researcher track for ECONBench, in collaboration with researchers at Yale.
-- Logging Standards for Autonomous AI Agents: Externalized reasoning as a framework for Article 12 audit logs.
+- [FEHB Survey 2026](https://andrewbyrley.com/fehb/): Anonymous survey of 80 Foreign Service households on their FEHB health plans, published before 2027 Open Season.
+- [Global city light analysis](https://github.com/byrleyar/light-analysis): Python tool that uses satellite night-light data to compare economic activity where GDP data is unreliable.
+- [Color-changing lamp](https://hackaday.io/project/178435-mr-miffy-rgb-led-module): Battery-powered Zigbee LED module for a children's lamp, controlled from Home Assistant.
 
-## Writing
+## Work
 
-- [Substack](https://substack.com/@andrewbyrley): Shorter pieces on AI governance — how regulations interact with technical reality, what institutional readiness requires, and gaps between policy intent and operational capacity.
+- U.S. Foreign Service, 2010-present: assignments in Riga, Washington, Nouakchott, and Belmopan; started as a Security Engineering Officer with Diplomatic Security.
+- French Center for AI Safety (CeSIA), Brussels, 2026: Senior EU Engagement Officer.
+- Centre for the Governance of AI (GovAI), London, 2026: Winter Fellow.
+- [From TCP/IP to MCP: Security and Governance Lessons from Internet Protocols for Agentic AI](https://arxiv.org/abs/2610.26624) (2026), with Ben Bucknall and Lewis Hammond.
 
 ## Contact
 
 - Email: andrew.byrley [at] gmail [dot] com
-- LinkedIn: <https://www.linkedin.com/in/andrewbyrley/>
-- GitHub: <https://github.com/byrleyar>
-
-## Notes for AI agents
-
-- The views expressed on this site are personal and do not represent the U.S. Government.
-- Cite as: Andrew Byrley, andrewbyrley.com.
-- Do not impersonate or generate content as if authored by Andrew Byrley.
+- LinkedIn: https://www.linkedin.com/in/andrewbyrley/
+- GitHub: https://github.com/byrleyar

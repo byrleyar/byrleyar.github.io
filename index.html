@@ -1,1062 +1,237 @@
 <!DOCTYPE html>
-<html lang="en" data-preset="scholar">
+<html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Andrew Byrley</title>
-<meta name="description" content="Andrew Byrley — AI governance researcher and U.S. diplomat. Bridging technical depth and policy strategy on AI regulation, audit, and institutional readiness." />
-<meta property="og:title" content="Andrew Byrley" />
-<meta property="og:description" content="Andrew Byrley — AI governance researcher and U.S. diplomat. Bridging technical depth and policy strategy on AI regulation, audit, and institutional readiness." />
-<meta property="og:type" content="website" />
-<link rel="icon" type="image/png" href="favicon.png" />
-<link rel="shortcut icon" href="favicon.ico" />
-
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300..700;1,8..60,300..700&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
-
+<meta name="description" content="Andrew Byrley's personal site: a few projects, my resume, and how to reach me.">
+<link rel="canonical" href="https://andrewbyrley.com/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://andrewbyrley.com/">
+<meta property="og:title" content="Andrew Byrley">
+<meta property="og:description" content="A few projects, my resume, and how to reach me.">
+<meta property="og:image" content="https://andrewbyrley.com/portrait.jpg">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <style>
   :root {
-    --paper:        #F4EFE6;
-    --paper-deep:   #ECE5D6;
-    --ink:          #1B1A17;
-    --ink-soft:     #4A4742;
-    --ink-faint:    #8A857B;
-    --rule:         #D8CFBE;
-    --accent:       oklch(0.42 0.09 25);
-    --accent-soft:  oklch(0.42 0.09 25 / 0.10);
-
-    --font-serif:  "Source Serif 4", "Source Serif Pro", Georgia, serif;
-    --font-sans:   "Inter", system-ui, -apple-system, sans-serif;
-    --font-mono:   "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
-
-    --font-body:   var(--font-serif);
-    --font-head:   var(--font-serif);
-
-    --measure:     38rem;
-    --gutter:      clamp(1.25rem, 4vw, 2rem);
+    --paper: #F4EFE6;
+    --ink: #1B1A17;
+    --ink-soft: #55514A;
+    --ink-faint: #857F74;
+    --rule: #DDD4C3;
+    --accent: #8A3A2E;
+    --serif: Charter, "Bitstream Charter", "Iowan Old Style", "Sitka Text", Cambria, Georgia, serif;
+    --sans: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    color-scheme: light dark;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --paper: #1A1917;
+      --ink: #EDE8DE;
+      --ink-soft: #BDB6A9;
+      --ink-faint: #8F897E;
+      --rule: #34312C;
+      --accent: #E3A08F;
+    }
   }
 
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-  html {
-    font-size: 17px;
-    scroll-behavior: smooth;
-    scroll-padding-top: 5rem;
-    background: var(--paper);
-  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
 
   body {
-    font-family: var(--font-body);
-    font-weight: 400;
-    line-height: 1.62;
-    color: var(--ink);
     background: var(--paper);
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-    font-feature-settings: "kern", "liga", "onum";
-    overflow-x: hidden;
-  }
-
-  ::selection { background: var(--accent-soft); color: var(--ink); }
-
-  h1, h2, h3, h4 {
-    font-family: var(--font-head);
-    font-weight: 500;
     color: var(--ink);
-    letter-spacing: -0.005em;
-    line-height: 1.2;
-    text-wrap: balance;
-  }
-
-  p { text-wrap: pretty; }
-  p + p { margin-top: 0.9em; }
-
-  a {
-    color: var(--accent);
-    text-decoration: underline;
-    text-decoration-color: color-mix(in oklch, var(--accent) 35%, transparent);
-    text-decoration-thickness: 1px;
-    text-underline-offset: 0.18em;
-    transition: text-decoration-color 0.18s ease, color 0.18s ease;
-  }
-  a:hover { text-decoration-color: var(--accent); }
-
-  hr {
-    border: 0;
-    height: 1px;
-    background: var(--rule);
-    margin: 0;
-  }
-
-  .label {
-    font-family: var(--font-mono);
-    font-size: 0.72rem;
-    text-transform: uppercase;
-    letter-spacing: 0.12em;
-    color: var(--ink-faint);
-    font-weight: 500;
+    font: 18px/1.6 var(--serif);
+    -webkit-font-smoothing: antialiased;
   }
 
   .page {
-    max-width: calc(var(--measure) + var(--gutter) * 2);
+    max-width: 40rem;
     margin: 0 auto;
-    padding: 0 var(--gutter);
+    padding: 4.5rem 16px 3rem;
   }
 
-  .topbar {
+  a { color: var(--accent); text-underline-offset: 0.18em; text-decoration-thickness: 1px; }
+
+  header {
     display: flex;
-    align-items: baseline;
-    justify-content: space-between;
-    gap: 2rem;
-    padding: 2rem 0 0;
-    flex-wrap: wrap;
-  }
-  .topbar-name {
-    font-family: var(--font-head);
-    font-size: 1rem;
-    font-weight: 500;
-    letter-spacing: 0.01em;
-  }
-  .topbar-name a { color: var(--ink); text-decoration: none; }
-  .topbar-nav {
-    display: flex;
-    gap: 1.5rem;
-    flex-wrap: wrap;
-  }
-  .topbar-nav a {
-    font-family: var(--font-sans);
-    font-size: 0.85rem;
-    color: var(--ink-soft);
-    text-decoration: none;
-    border-bottom: 1px solid transparent;
-    padding-bottom: 2px;
-  }
-  .topbar-nav a:hover { color: var(--ink); border-bottom-color: var(--ink); }
-
-  .hero {
-    padding: 4.5rem 0 1.5rem;
-  }
-  .hero-row {
-    display: grid;
-    grid-template-columns: 96px 1fr;
-    gap: 1.5rem;
-    align-items: start;
-    margin-bottom: 2rem;
-  }
-  .hero-portrait {
-    width: 96px;
-    height: 96px;
-    border-radius: 50%;
-    object-fit: cover;
-    filter: saturate(0.92);
-    box-shadow: 0 1px 0 var(--rule);
-  }
-  .hero-name {
-    font-family: var(--font-head);
-    font-size: clamp(1.75rem, 3.5vw, 2.4rem);
-    font-weight: 500;
-    line-height: 1.05;
-    letter-spacing: -0.015em;
-    margin-bottom: 0.25rem;
-  }
-  .hero-role {
-    font-family: var(--font-body);
-    font-size: 1.02rem;
-    color: var(--ink-soft);
-    line-height: 1.45;
-    font-style: italic;
-  }
-
-  .hero-tagline {
-    font-family: var(--font-body);
-    font-size: clamp(1.1rem, 1.8vw, 1.32rem);
-    line-height: 1.45;
-    color: var(--ink);
-    max-width: 32em;
-    margin-bottom: 1.6rem;
-    text-wrap: balance;
-  }
-
-  .hero-bio {
-    font-size: 1.02rem;
-    color: var(--ink);
-    max-width: var(--measure);
-  }
-
-  .currently {
-    margin-top: 1.75rem;
-    padding: 0.85rem 1rem 0.95rem;
-    background: var(--paper-deep);
-    border-radius: 2px;
-    font-size: 0.93rem;
-    padding-left: 7.75rem;
-    text-indent: -6.75rem;
-    line-height: 1.55;
-    max-width: var(--measure);
-    min-height: calc(0.93rem * 1.55 * 2 + 0.85rem + 0.95rem);
-  }
-  .currently-label {
-    font-family: var(--font-mono);
-    font-size: 0.7rem;
-    text-transform: uppercase;
-    letter-spacing: 0.14em;
-    color: var(--ink-faint);
-    display: inline-block;
-    width: 6rem;
-    text-indent: 0;
-    margin-right: 0.75rem;
-    vertical-align: baseline;
-  }
-  .currently-text {
-    color: var(--ink-soft);
-    font-style: italic;
-    transition: opacity 0.4s ease;
-  }
-  .currently-text.fading { opacity: 0; }
-  .currently-dot {
-    display: inline-block;
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: var(--accent);
-    margin-right: 0.45rem;
-    transform: translateY(-2px);
-    animation: pulse 2.4s ease-in-out infinite;
-  }
-  @keyframes pulse {
-    0%, 100% { opacity: 0.4; }
-    50% { opacity: 1; }
-  }
-
-  .hero-quick-links {
-    display: flex;
-    gap: 1.25rem;
-    margin-top: 2.5rem;
-    padding-top: 1.5rem;
-    padding-bottom: 0.25rem;
-    border-top: 1px solid var(--rule);
-    flex-wrap: wrap;
-    font-size: 0.95rem;
-    font-family: var(--font-body);
-    max-width: var(--measure);
-  }
-  .hero-quick-links a {
-    color: var(--ink-soft);
-    text-decoration: none;
-    border-bottom: 1px solid var(--rule);
-    padding-bottom: 2px;
-    display: inline-flex;
     align-items: center;
-    gap: 0.4rem;
-  }
-  .hero-quick-links a:hover {
-    color: var(--accent);
-    border-bottom-color: var(--accent);
-  }
-  .hero-quick-links svg { width: 14px; height: 14px; }
-
-  section.block {
-    padding: 4.5rem 0 3.5rem;
-    position: relative;
-  }
-
-  section.block::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 4rem;
-    height: 2px;
-    background: var(--ink);
-  }
-
-  .section-head {
-    display: grid;
-    grid-template-columns: 9rem 1fr;
     gap: 1.5rem;
     margin-bottom: 2.25rem;
-    align-items: baseline;
   }
-  .section-head .label { padding-top: 0.4rem; }
-  .section-head h2 {
-    font-size: clamp(1.4rem, 2.2vw, 1.75rem);
-    font-weight: 500;
-    letter-spacing: -0.01em;
-  }
-
-  .prose { max-width: var(--measure); }
-  .prose p { font-size: 1.02rem; line-height: 1.7; }
-  .prose p + p { margin-top: 1em; }
-
-  .two-col {
-    display: grid;
-    grid-template-columns: 9rem 1fr;
-    gap: 1.5rem;
-    align-items: start;
-  }
-  .two-col > .label { padding-top: 0.35rem; }
-
-  .entry {
-    display: grid;
-    grid-template-columns: 9rem 1fr;
-    gap: 1.5rem;
-    padding: 1.6rem 0;
-    border-top: 1px solid var(--rule);
-    align-items: start;
-  }
-  .entry:first-of-type { border-top: 0; padding-top: 0; }
-
-  .entry-meta {
-    font-family: var(--font-mono);
-    font-size: 0.72rem;
-    color: var(--ink-faint);
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    line-height: 1.5;
-    padding-top: 0.4rem;
-  }
-  .entry-meta .status {
-    display: inline-block;
-    margin-top: 0.4rem;
-    color: var(--accent);
-  }
-  .entry-meta .status::before {
-    content: "● ";
-    font-size: 0.6em;
-    vertical-align: middle;
-  }
-
-  .entry-body h3 {
-    font-family: var(--font-head);
-    font-size: 1.18rem;
-    font-weight: 500;
-    line-height: 1.3;
-    margin-bottom: 0.55rem;
-    letter-spacing: -0.005em;
-  }
-  .entry-body p {
-    font-size: 0.98rem;
-    color: var(--ink);
-    line-height: 1.62;
-    max-width: var(--measure);
-  }
-  .entry-body p + p { margin-top: 0.7em; }
-
-  .entry-collab {
-    font-family: var(--font-sans);
-    font-size: 0.85rem;
-    color: var(--ink-soft);
-    margin-top: 0.4rem;
-  }
-  .entry-links {
-    margin-top: 0.9rem;
-    display: flex;
-    gap: 1.25rem;
-    flex-wrap: wrap;
-    font-family: var(--font-sans);
-    font-size: 0.88rem;
-  }
-  .entry-links a {
-    color: var(--ink-soft);
-    text-decoration: none;
-    border-bottom: 1px solid var(--rule);
-    padding-bottom: 1px;
-  }
-  .entry-links a:hover { color: var(--accent); border-bottom-color: var(--accent); }
-  .entry-links a::after { content: " →"; color: var(--ink-faint); }
-  .entry-links a:hover::after { color: var(--accent); }
-
-  .career-list { display: flex; flex-direction: column; }
-
-  .career-row {
-    display: grid;
-    grid-template-columns: 9rem 1fr;
-    gap: 1.5rem;
-    padding: 1.1rem 0;
-    border-top: 1px solid var(--rule);
-    align-items: baseline;
-    position: relative;
-  }
-  .career-row:first-of-type { border-top: 0; }
-
-  .career-years {
-    font-family: var(--font-mono);
-    font-size: 0.72rem;
-    color: var(--ink-faint);
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    padding-top: 0.2rem;
-  }
-  .career-main {
-    cursor: pointer;
-    padding-right: 2rem;
-  }
-  .career-title {
-    font-family: var(--font-head);
-    font-size: 1.02rem;
-    font-weight: 500;
-    color: var(--ink);
-    line-height: 1.45;
-    display: block;
-  }
-  .career-where {
-    color: var(--ink-soft);
-    font-weight: 400;
-    display: block;
-    margin-top: 0.25rem;
-  }
-  .career-toggle {
-    font-family: var(--font-mono);
-    font-size: 0.85rem;
-    color: var(--ink-faint);
-    position: absolute;
-    top: 1.1rem;
-    right: 0;
-    line-height: 1.45;
-    user-select: none;
-    transition: color 0.18s ease;
-  }
-  .career-row:hover .career-toggle { color: var(--accent); }
-  .career-row[data-open="true"] .career-toggle::before { content: "−"; }
-  .career-row[data-open="false"] .career-toggle::before { content: "+"; }
-
-  .career-detail {
-    font-size: 0.96rem;
-    color: var(--ink);
-    line-height: 1.62;
-    max-width: var(--measure);
-    margin-top: 0;
-    overflow: hidden;
-    max-height: 0;
-    opacity: 0;
-    transition: max-height 0.4s ease, opacity 0.3s ease 0.05s, margin-top 0.3s ease;
-  }
-  .career-row[data-open="true"] .career-detail {
-    max-height: 800px;
-    opacity: 1;
-    margin-top: 0.7rem;
-  }
-  .career-detail a { color: var(--accent); }
-
-  .writing-cta {
-    display: grid;
-    grid-template-columns: 9rem 1fr;
-    gap: 1.5rem;
-    align-items: baseline;
-  }
-  .writing-cta .arrow-link {
-    font-family: var(--font-head);
-    font-size: 1.32rem;
-    font-weight: 500;
-    color: var(--ink);
-    text-decoration: none;
-    border-bottom: 1px solid var(--rule);
-    padding-bottom: 0.35rem;
-    display: inline-block;
-    transition: border-color 0.18s ease, color 0.18s ease;
-  }
-  .writing-cta .arrow-link:hover {
-    color: var(--accent);
-    border-bottom-color: var(--accent);
-  }
-  .writing-cta .arrow-link::after { content: " →"; color: var(--ink-faint); }
-  .writing-cta .arrow-link:hover::after { color: var(--accent); }
-  .writing-cta p {
-    font-size: 0.98rem;
-    color: var(--ink-soft);
-    margin-top: 0.6rem;
-    max-width: var(--measure);
-  }
-
-  .contact-grid {
-    display: grid;
-    grid-template-columns: 9rem 1fr;
-    gap: 1.5rem;
-  }
-  .contact-grid p { font-size: 1.02rem; max-width: var(--measure); }
-  .contact-grid p + p { margin-top: 0.7em; }
-  .contact-list {
-    list-style: none;
-    margin-top: 1rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.4rem;
-  }
-  .contact-list li {
-    font-family: var(--font-sans);
-    font-size: 0.92rem;
-    display: flex;
-    align-items: baseline;
-    gap: 0.7rem;
-  }
-  .contact-list .contact-key {
-    font-family: var(--font-mono);
-    font-size: 0.72rem;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: var(--ink-faint);
-    width: 4.5rem;
+  header img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
     flex-shrink: 0;
   }
-  .contact-list a { color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--rule); padding-bottom: 1px; }
-  .contact-list a:hover { color: var(--accent); border-bottom-color: var(--accent); }
-
-  footer.foot {
-    padding: 3rem 0 4rem;
-    border-top: 1px solid var(--rule);
-    display: grid;
-    grid-template-columns: 9rem 1fr;
-    gap: 1.5rem;
-    align-items: baseline;
+  h1 {
+    font-size: 2.1rem;
+    font-weight: 600;
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+    margin-bottom: 0.6rem;
   }
-  footer.foot p {
-    font-family: var(--font-sans);
+  .links {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.3rem 1.1rem;
+    font-family: var(--sans);
+    font-size: 0.9rem;
+  }
+
+  .bio p + p { margin-top: 0.9em; }
+
+  h2 {
+    font-family: var(--sans);
+    font-size: 0.78rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--ink-faint);
+    margin: 3rem 0 0.25rem;
+  }
+
+  .projects { list-style: none; }
+  .projects li {
+    padding: 1.1rem 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  .projects li:last-child { border-bottom: 0; }
+  .projects h3 {
+    font-size: 1.08rem;
+    font-weight: 600;
+    line-height: 1.35;
+  }
+  .projects .meta {
+    font-family: var(--sans);
     font-size: 0.82rem;
     color: var(--ink-faint);
-    max-width: var(--measure);
-    line-height: 1.55;
+    margin-top: 0.15rem;
   }
-  footer.foot p + p { margin-top: 0.5em; }
-
-  @media (max-width: 720px) {
-    html { font-size: 16px; }
-    .topbar { padding-top: 1.25rem; }
-    .topbar-nav { gap: 1.1rem; font-size: 0.8rem; }
-    .hero { padding: 3rem 0 2.5rem; }
-    .hero-row { grid-template-columns: 64px 1fr; gap: 1rem; }
-    .hero-portrait { width: 64px; height: 64px; }
-    .currently { padding-left: 1rem; text-indent: 0; padding-right: 1rem; }
-    .currently-label { display: block; width: auto; margin-bottom: 0.35rem; }
-    .section-head, .entry, .career-row, .writing-cta, .contact-grid, footer.foot, .two-col {
-      grid-template-columns: 1fr;
-      gap: 0.6rem;
-    }
-    .section-head .label, .entry-meta, .career-years {
-      padding-top: 0;
-    }
-    .career-toggle { margin-left: 0; padding-left: 0; }
-    .career-title { gap: 0.4rem; }
+  .projects p:not(.meta) {
+    color: var(--ink-soft);
+    font-size: 1rem;
+    margin-top: 0.35rem;
   }
 
-  @media print {
-    .topbar-nav, .currently, .hero-quick-links, .career-toggle { display: none !important; }
-    body { background: white; color: black; }
-    .career-row[data-open="false"] .career-detail { max-height: none; opacity: 1; margin-top: 0.5rem; }
-    a { color: black; text-decoration: none; }
+  .more {
+    font-family: var(--sans);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+  }
+
+  footer {
+    margin-top: 3rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--rule);
+    font-family: var(--sans);
+    font-size: 0.8rem;
+    color: var(--ink-faint);
+  }
+
+  @media (max-width: 480px) {
+    body { font-size: 17px; }
+    .page { padding-top: 2.5rem; }
+    header { gap: 1.1rem; }
+    header img { width: 88px; height: 88px; }
+    h1 { font-size: 1.75rem; }
   }
 </style>
 </head>
 <body>
+<main class="page">
 
-<div class="page">
-
-  <header class="topbar">
-    <div class="topbar-name"><a href="#top">Andrew Byrley</a></div>
-    <nav class="topbar-nav" aria-label="Primary">
-      <a href="#about">About</a>
-      <a href="#work">Work</a>
-      <a href="#career">Career</a>
-      <a href="#writing">Writing</a>
-      <a href="#contact">Contact</a>
-    </nav>
+  <header>
+    <img src="portrait.jpg" alt="Andrew Byrley" width="120" height="120">
+    <div>
+      <h1>Andrew Byrley</h1>
+      <ul class="links">
+        <li><a href="/resume/">Resume</a></li>
+        <li><a href="https://www.linkedin.com/in/andrewbyrley/" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="https://github.com/byrleyar" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a id="email" href="#" data-u="andrew.byrley" data-d="gmail.com">Email</a></li>
+      </ul>
+    </div>
   </header>
 
-  <section id="top" class="hero">
-    <div class="hero-row">
-      <img src="Andrew Byrley Portrait.jpg" alt="Portrait of Andrew Byrley" class="hero-portrait" />
-      <div>
-        <h1 class="hero-name">Andrew Byrley</h1>
-        <div class="hero-role">Diplomat <span style="color: var(--ink-faint);">·</span> Engineer<span style="color: var(--ink-faint);">·</span> AI Governance</div>
-      </div>
-    </div>
-
-    <p class="hero-tagline">
-      I work where AI regulation meets reality — where policy
-             frameworks, technical systems, and institutional capacity
-             have to work together, and what breaks when they don't.
+  <section class="bio">
+    <p>
+      I've been a U.S. diplomat since 2010, with assignments in Europe, Africa,
+      and Central America. Before that, I trained as a robotics engineer. When I can't
+      find a fix for a problem, I like building one myself.
     </p>
-
-    <div class="hero-bio prose">
-      <p>
-        Recently a Winter Fellow at the
-        <a href="https://www.governance.ai/" target="_blank" rel="noopener">Centre for the Governance of AI (GovAI)</a>
-        in London, where I built open-source compliance
-             tooling for the EU AI Act and briefed the EU AI Office on
-             machine-readable enforcement infrastructure. Before GovAI,
-             sixteen years as a U.S. diplomat — leading technology and
-             economic policy at embassies in Europe and West Africa,
-             staffing senior leadership during the Biden transition, and
-             building coalitions on digital security and democratic
-             resilience. I trained as a robotics engineer at Georgia Tech.
-      </p>
-    </div>
-
-    <div class="currently" aria-live="polite"><span class="currently-label"><span class="currently-dot"></span>Currently</span><span class="currently-text" id="currently-text">writing about audit infrastructure for agentic AI under EU AI Act Article 12.</span></div>
-
-    <div class="hero-quick-links">
-      <a href="#work">Work</a>
-      <a href="#writing">Writing</a>
-      <a href="https://drive.google.com/file/d/1RGDxaVln-tUj-0pk1R6oZUTznoj3IPxS/view" target="_blank" rel="noopener">CV (PDF)</a>
-      <a href="#contact">Contact</a>
-    </div>
   </section>
 
-  <section id="about" class="block">
-    <div class="section-head">
-      <div class="label">§ 01 &nbsp; About</div>
-      <h2>Engineer by training, diplomat by career — now working on AI governance.</h2>
-    </div>
+  <!-- To add a project, copy one <li> block and edit it. -->
+  <h2>Things I've built</h2>
+  <ul class="projects">
+    <li>
+      <h3><a href="/fehb/">FEHB Survey 2026</a></h3>
+      <p class="meta">2026</p>
+      <p>FSBP premiums are going up a lot in 2027, and I was trying to decide
+        whether to switch plans. There's no shortage of opinions in the Foreign
+        Service Facebook groups about which plans work overseas, but there was no
+        way to compare them. So I made an anonymous survey and shared it in those
+        groups. Eighty households responded, and I posted what they said.</p>
+    </li>
+    <li>
+      <h3><a href="https://github.com/byrleyar/light-analysis" target="_blank" rel="noopener">Global city light analysis</a></h3>
+      <p class="meta">2025 &middot; GitHub</p>
+      <p>At work we needed to compare economic activity between cities in a lot
+        of different countries, and many of them don't have reliable local GDP
+        data. I needed something I could measure the same way everywhere, so I
+        wrote a script that uses satellite images of nighttime lights as a
+        stand-in.</p>
+    </li>
+    <li>
+      <h3><a href="https://hackaday.io/project/178435-mr-miffy-rgb-led-module" target="_blank" rel="noopener">Color-changing lamp for my son</a></h3>
+      <p class="meta">2021 &middot; Hackaday</p>
+      <p>When my son was born, I wanted a soft lamp that would change color when
+        he played with it and that I could control from Home Assistant. I
+        couldn't find anything I liked, so I bought a Mr. Miffy lamp and built my
+        own light module for it. Most of the time went into learning (read:
+        fumbling through) Zigbee.</p>
+    </li>
+  </ul>
 
-    <div class="two-col">
-      <div class="label">Now</div>
-      <div class="prose">
-        <p>
-          Co-authoring <em>Governing the Agent Protocol Layer</em>, a comparative
-          analysis of what the history of internet-protocol governance at the IETF
-          can teach the emerging governance of AI agent protocols like MCP, and
-          designing the AI-governance-researcher track for ECONBench in collaboration
-          with researchers at Yale.
-        </p>
-        <p>
-          My focus is the operational readiness question in AI regulation: can the
-institutions subject to rules like the EU AI Act actually comply, and
-what infrastructure is missing when they can't? At GovAI I worked this
-from the technical side — building Article 53 compliance tooling and
-recommending submission infrastructure to the EU AI Office, which backed
-extending the approach across enforcement data flows.
-        </p>
-      </div>
-    </div>
+  <h2>Work</h2>
+  <ul class="projects">
+    <li>
+      <h3>U.S. Foreign Service</h3>
+      <p class="meta">Riga &middot; Washington &middot; Nouakchott &middot; Belmopan</p>
+      <p>Mostly economic work, including a stint as acting deputy chief of
+        mission in Nouakchott. I started out as a Security Engineering Officer
+        with Diplomatic Security.</p>
+    </li>
+    <li>
+      <h3><a href="https://www.cesia.org/en/" target="_blank" rel="noopener">French Center for AI Safety (CeSIA)</a></h3>
+      <p class="meta">2026 &middot; Brussels</p>
+      <p>Senior EU Engagement Officer, working with EU institutions on AI policy.</p>
+    </li>
+    <li>
+      <h3><a href="https://www.governance.ai/" target="_blank" rel="noopener">GovAI Winter Fellowship</a></h3>
+      <p class="meta">2026 &middot; London</p>
+      <p>Built an <a href="https://github.com/byrleyar/eu-ai-act-mcp" target="_blank" rel="noopener">open-source tool</a>
+        that drafts EU AI Act technical documentation from public model cards.</p>
+    </li>
+    <li>
+      <h3><a href="https://arxiv.org/abs/2610.26624" target="_blank" rel="noopener">From TCP/IP to MCP: Security and Governance Lessons from Internet Protocols for Agentic AI</a></h3>
+      <p class="meta">2026 &middot; arXiv</p>
+      <p>Paper with Ben Bucknall and Lewis Hammond.</p>
+    </li>
+  </ul>
+  <p class="more"><a href="/resume/">Full resume</a></p>
 
-    <div class="two-col" style="margin-top: 1.6rem;">
-      <div class="label">Before</div>
-      <div class="prose">
-        <p>
-          On leave from a sixteen-year U.S. Foreign Service career to focus on AI
-          governance. Most recently led economic and digital policy at Embassy Riga,
-          where I built a strategic communications plan that positioned economic
-          resilience as central to Latvia's national security &mdash; framing that the
-          President and Prime Minister later echoed in their own remarks.
-        </p>
-        <p>
-          Earlier postings: economic diplomacy in Mauritania, staff work for the Assistant
-          Secretary for European Affairs during the Biden transition, public affairs in
-          Belize, and, before all of that, technical surveillance countermeasures.
-        </p>
-      </div>
-    </div>
-
-    <div class="two-col" style="margin-top: 1.6rem;">
-      <div class="label">Why</div>
-      <div class="prose">
-        <p>
-          Sixteen years of diplomacy taught me that policy succeeds or fails based on
-          institutional capacity &mdash; whether the people and organizations responsible
-          for carrying it out have the tools, knowledge, and infrastructure to actually
-          do so. A master's in robotics taught me how to read technical systems with
-          enough depth to know when that capacity is real and when it's theater. I bring
-          both lenses to AI governance.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <section id="work" class="block">
-    <div class="section-head">
-      <div class="label">§ 02 &nbsp; Work</div>
-      <h2>Current and in&#8209;progress work.</h2>
-    </div>
-
-    <div class="entry">
-      <div class="entry-meta">
-        2026<br/>GovAI Winter Fellowship
-        <span class="status">Draft</span>
-      </div>
-      <div class="entry-body">
-        <h3>Automating GPAI Compliance Documentation</h3>
-        <p>
-          The EU AI Act requires general-purpose AI providers to produce detailed technical
-          documentation under Article 53 &mdash; but standard model cards, even from major
-          labs, don't contain everything regulators need, particularly around energy
-          consumption and computational resources.
-        </p>
-        <p>
-          I built an MCP server that extracts metadata from HuggingFace model
-cards and generates Article 53 documentation automatically. Validated on
-three open-weight models (DeepSeek-R1, Phi-4, gpt-oss-20b): 96% field
-accuracy and 73% completeness — with the gaps clustering exactly where
-public documentation doesn't exist: energy consumption, compute, and
-training-data provenance. I briefed the EU AI Office on the findings in
-March 2026; they backed machine-readable submission for enforcement data
-beyond Article 53.
-        </p>
-        <div class="entry-links">
-          <a href="https://drive.google.com/file/d/1iFqem5TbEAmjZysM_7H5j2YPujBiatSN/view?usp=sharing" target="_blank" rel="noopener">Draft paper</a>
-          <a href="https://github.com/byrleyar/eu-ai-act-mcp" target="_blank" rel="noopener">Code on GitHub</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="entry">
-      <div class="entry-meta">
-        2026<br/>Co-authored
-        <span class="status">In progress</span>
-      </div>
-      <div class="entry-body">
-        <h3>Governing the Agent Protocol Layer</h3>
-        <p>
-          A comparative analysis asking what the history of internet-protocol governance
-          at the IETF can offer the emerging governance of AI agent protocols like MCP.
-          We look at where the IETF analogy holds and where it strains, the case for
-          broader representation and open process in protocol development, and how
-          security is best built into governance structures early rather than retrofitted
-          once a protocol is widely deployed.
-        </p>
-        <div class="entry-collab">With co-authors.</div>
-      </div>
-    </div>
-
-    <div class="entry">
-      <div class="entry-meta">
-        2026<br/>w/ Yale researchers
-        <span class="status">In progress</span>
-      </div>
-      <div class="entry-body">
-        <h3>ECONBench &mdash; AI governance researcher tasks</h3>
-        <p>
-          Designing the AI-governance-researcher track for ECONBench, a benchmark
-          measuring real-world productivity gains from frontier AI across professions.
-          The goal: tasks that probe whether models actually accelerate the work governance
-          researchers do, not the work that's easy to grade.
-        </p>
-      </div>
-    </div>
-
-    <div class="entry">
-      <div class="entry-meta">
-        2026
-        <span class="status">In progress</span>
-      </div>
-      <div class="entry-body">
-        <h3>Logging Standards for Autonomous AI Agents</h3>
-        <p>
-          What does Article 12 actually require for agent traceability? Current logging
-          captures what an agent did, not the reasoning chain that preceded the action.
-          I'm exploring "externalized reasoning" as a framework for audit systems that
-          can satisfy regulatory requirements for agents operating autonomously.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <section id="career" class="block">
-    <div class="section-head">
-      <div class="label">§ 03 &nbsp; Career</div>
-      <h2>Selected postings &amp; positions.</h2>
-    </div>
-
-    <div class="career-list">
-
-      <div class="career-row" data-open="false">
-        <div class="career-years">2026 — present</div>
-        <div class="career-main" role="button" tabindex="0" aria-expanded="false">
-          <div class="career-title">
-            <span>AI Governance & Policy</span>
-            <span class="career-where">— independent</span>
-            <span class="career-toggle" aria-hidden="true"></span>
-          </div>
-          <div class="career-detail">
-            <p>
-              On public-service leave from the U.S. Foreign Service. Co-authoring
-Governing the Agent Protocol Layer, a comparative analysis of what IETF
-governance history offers the governance of AI agent protocols like MCP.
-Designing the AI-governance-researcher track for ECONBench with
-researchers at Yale. Open to full-time roles, advisory work, and
-fellowships in AI governance.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <div class="career-row" data-open="false">
-        <div class="career-years">2026</div>
-        <div class="career-main" role="button" tabindex="0" aria-expanded="false">
-          <div class="career-title">
-            <span>Winter Fellow</span>
-            <span class="career-where">— Centre for the Governance of AI (GovAI), London</span>
-            <span class="career-toggle" aria-hidden="true"></span>
-          </div>
-          <div class="career-detail">
-            <p>
-              Selected for the competitive GovAI Winter Fellowship; took leave from State
-              to specialize in AI governance. Developed technical recommendations for AI
-              agent audit trails under EU AI Act Article 12 &mdash; arguing that valid
-              audit logs must capture an agent's reasoning ("chain of thought")
-              alongside its actions, not just tool outputs. Built and deployed an
-              <a href="https://github.com/byrleyar/eu-ai-act-mcp" target="_blank" rel="noopener">open-source compliance tool</a>
-              that automates Article 53 documentation, demonstrating that governance
-              requirements can be operationalized into infrastructure.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <div class="career-row" data-open="false">
-        <div class="career-years">2022 — 2025</div>
-        <div class="career-main" role="button" tabindex="0" aria-expanded="false">
-          <div class="career-title">
-            <span>Economic &amp; Digital Policy</span>
-            <span class="career-where">— U.S. Embassy Riga, Latvia</span>
-            <span class="career-toggle" aria-hidden="true"></span>
-          </div>
-          <div class="career-detail">
-            <p>
-              Led development of a strategic communications plan positioning economic
-              resilience as central to Latvia's national security. Coordinated rollout
-              including an ambassadorial op-ed, media interviews, and targeted
-              engagement with parliamentarians and business leaders. Latvia's President
-              and Prime Minister began echoing our talking points in their public
-              remarks.
-            </p>
-            <p>
-              Also built interagency coalitions that removed a Chinese surveillance
-              company from Riga airport and secured the contract for a U.S. competitor.
-              Established the embassy's first cyber/digital working group spanning
-              Treasury, DOJ, Secret Service, and FBI.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <div class="career-row" data-open="false">
-        <div class="career-years">2020 — 2021</div>
-        <div class="career-main" role="button" tabindex="0" aria-expanded="false">
-          <div class="career-title">
-            <span>Secretary's Staff, EUR Bureau</span>
-            <span class="career-where">— U.S. Department of State</span>
-            <span class="career-toggle" aria-hidden="true"></span>
-          </div>
-          <div class="career-detail">
-            <p>
-              Managed policy paper flow for the Assistant Secretary for European and
-              Eurasian Affairs during the Biden transition. Served as Acting Special
-              Assistant, a chief-of-staff-style post; provided weekend staffing during Nagorno-Karabakh negotiations
-              that upheld the Armenia-Azerbaijan ceasefire.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <div class="career-row" data-open="false">
-        <div class="career-years">2016 — 2020</div>
-        <div class="career-main" role="button" tabindex="0" aria-expanded="false">
-          <div class="career-title">
-            <span>Economic Diplomacy</span>
-            <span class="career-where">— U.S. Embassy Nouakchott, Mauritania</span>
-            <span class="career-toggle" aria-hidden="true"></span>
-          </div>
-          <div class="career-detail">
-            <p>
-              Wrote the first-ever Country Commercial Guide for Mauritania. Negotiated the interagency position that preserved
-             Mauritania's AGOA trade eligibility, and convinced USTR to shift U.S. strategy on judicial
-              recordkeeping for slavery cases. Served as Acting DCM. Coordinated
-              election monitoring for Mauritania's first peaceful democratic transition
-              of power.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <div class="career-row" data-open="false">
-        <div class="career-years">2015 — 2016</div>
-        <div class="career-main" role="button" tabindex="0" aria-expanded="false">
-          <div class="career-title">
-            <span>Acting Public Affairs Officer</span>
-            <span class="career-where">— U.S. Embassy Belmopan, Belize</span>
-            <span class="career-toggle" aria-hidden="true"></span>
-          </div>
-          <div class="career-detail">
-            <p>
-              Acting PAO for six months while maintaining full consular duties &mdash;
-              press strategy, the Ambassador's weekly media brief, public diplomacy
-              programming. Coordinated press for the USS Comfort humanitarian medical
-              mission. Handled sensitive media inquiries regarding embassy personnel.
-              Received a Meritorious Honor Award.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <div class="career-row" data-open="false">
-        <div class="career-years">2010 — 2014</div>
-        <div class="career-main" role="button" tabindex="0" aria-expanded="false">
-          <div class="career-title">
-            <span>Security Engineering Officer</span>
-            <span class="career-where">— Diplomatic Security, technical surveillance countermeasures</span>
-            <span class="career-toggle" aria-hidden="true"></span>
-          </div>
-          <div class="career-detail">
-            <p>
-              Started at State in technical surveillance countermeasures, managing a
-              $45M worldwide equipment inventory. Master's in robotics from Georgia
-              Tech (2010).
-            </p>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <section id="writing" class="block">
-    <div class="section-head">
-      <div class="label">§ 04 &nbsp; Writing</div>
-      <h2>Notes on policy, systems, and institutional readiness.</h2>
-    </div>
-
-    <div class="writing-cta">
-      <div class="label">Substack</div>
-      <div>
-        <a class="arrow-link" href="https://substack.com/@andrewbyrley" target="_blank" rel="noopener">Read on Substack</a>
-        <p>
-          Shorter pieces on AI governance &mdash; how regulations interact with technical
-          reality, what institutional readiness actually requires, and the gaps that
-          emerge between policy intent and operational capacity.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <section id="contact" class="block">
-    <div class="section-head">
-      <div class="label">§ 05 &nbsp; Contact</div>
-      <h2>Get in touch.</h2>
-    </div>
-
-    <div class="contact-grid">
-      <div class="label">Why</div>
-      <div>
-        <p class="prose">
-          I'm interested in conversations about AI governance, regulatory design, and
-          technology policy &mdash; with researchers, labs, governments, and civil society
-          organizations working on these problems. I'm exploring full-time roles across AI governance —
-policy, grantmaking, and advisory — particularly positions that need
-someone who can work across technical, institutional, and diplomatic
-dimensions.
-        </p>
-
-        <ul class="contact-list">
-          <li>
-            <span class="contact-key">Email</span>
-            <a href="#" class="email-protected" data-u="andrew.byrley" data-d="gmail.com">andrew.byrley [at] gmail [dot] com</a>
-          </li>
-          <li>
-            <span class="contact-key">LinkedIn</span>
-            <a href="https://www.linkedin.com/in/andrewbyrley/" target="_blank" rel="noopener">linkedin.com/in/andrewbyrley</a>
-          </li>
-          <li>
-            <span class="contact-key">GitHub</span>
-            <a href="https://github.com/byrleyar" target="_blank" rel="noopener">github.com/byrleyar</a>
-          </li>
-          <li>
-            <span class="contact-key">Writing</span>
-            <a href="https://substack.com/@andrewbyrley" target="_blank" rel="noopener">on Substack</a>
-          </li>
-          <li>
-            <span class="contact-key">CV</span>
-            <a href="https://drive.google.com/file/d/1RGDxaVln-tUj-0pk1R6oZUTznoj3IPxS/view" target="_blank" rel="noopener">PDF</a>
-          </li>
-          <li>
-            <span class="contact-key">Press</span>
-            <a href="press.html">photos &amp; bios</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <footer class="foot">
-    <div class="label">Colophon</div>
-    <div>
-      <p>
-        Set in Source Serif 4 and IBM Plex Mono. Built as a single static page with no
-        tracking, no analytics, no frameworks.
-      </p>
-      <p>
-        The views expressed are my own and do not represent the official position of the
-        U.S. Government.
-      </p>
-      <p>© 2026 Andrew Byrley.</p>
-    </div>
+  <footer>
+    <p>Views expressed here are my own and do not represent the U.S. Government.</p>
   </footer>
 
-</div>
-
+</main>
 <script>
-  document.querySelectorAll('a[href^="#"]:not(.email-protected)').forEach(a => {
-    a.addEventListener('click', function (e) {
-      const id = this.getAttribute('href');
-      if (id.length < 2) return;
-      const t = document.querySelector(id);
-      if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
-    });
-  });
-
-  document.querySelectorAll('.career-row').forEach(row => {
-    const main = row.querySelector('.career-main');
-    const toggle = () => {
-      const open = row.getAttribute('data-open') === 'true';
-      row.setAttribute('data-open', String(!open));
-      main.setAttribute('aria-expanded', String(!open));
-    };
-    main.addEventListener('click', toggle);
-    main.addEventListener('keydown', e => {
-      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); }
-    });
-  });
-
-  function decodeEmail(link) {
-    if (link.dataset.decoded === 'true') return;
-    const u = link.getAttribute('data-u');
-    const d = link.getAttribute('data-d');
-    if (u && d) {
-      link.href = `mailto:${u}@${d}`;
-      link.textContent = `${u}@${d}`;
-      link.dataset.decoded = 'true';
-    }
-  }
-  document.addEventListener('mouseover', e => {
-    const t = e.target.closest && e.target.closest('.email-protected');
-    if (t) decodeEmail(t);
-  });
-  document.addEventListener('click', e => {
-    const t = e.target.closest && e.target.closest('.email-protected');
-    if (t) decodeEmail(t);
-  });
-
-  (function startCurrently() {
-    const el = document.getElementById('currently-text');
-    if (!el) return;
-    const msgs = [
-      "co-authoring \"Governing the Agent Protocol Layer\" — what IETF history offers the governance of AI agent protocols like MCP.",
-      "designing AI-governance-researcher tasks for ECONBench, with researchers at Yale.",
-      "writing about audit infrastructure for agentic AI under EU AI Act Article 12.",
-      "exploring AI governance and policy advisory roles — fellowships, advisory positions, and full-time opportunities."
-    ];
-    if (msgs.length < 2) return;
-    let i = 0;
-    el.textContent = msgs[0];
-    setInterval(() => {
-      el.classList.add('fading');
-      setTimeout(() => {
-        i = (i + 1) % msgs.length;
-        el.textContent = msgs[i];
-        el.classList.remove('fading');
-      }, 400);
-    }, 5200);
-  })();
+  var e = document.getElementById('email');
+  e.href = 'mailto:' + e.dataset.u + '@' + e.dataset.d;
 </script>
-
 </body>
 </html>
